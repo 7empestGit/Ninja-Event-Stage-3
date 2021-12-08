@@ -13,9 +13,9 @@ public class AxleInfo
 
 public class CarController : MonoBehaviour
 {
-    public List<AxleInfo> axleInfos;
-    public float maxMotorTorque;
-    public float maxSteeringAngle;
+    [SerializeField] private List<AxleInfo> axleInfos;
+    [SerializeField] private float maxMotorTorque;
+    [SerializeField] private float maxSteeringAngle;
 
     // finds the corresponding visual wheel
     // correctly applies the transform
@@ -39,7 +39,7 @@ public class CarController : MonoBehaviour
     public void FixedUpdate()
     {
         #region Screen Touch
-        float touchSide = 0;
+        /*float touchSide = 0;
         if (Input.touchCount == 1)
         {
             var touch = Input.touches[0];
@@ -57,11 +57,11 @@ public class CarController : MonoBehaviour
         else
         {
             touchSide = 0;
-        }
+        }*/
         #endregion
 
         float motor = maxMotorTorque;   //* Input.GetAxis("Vertical");
-        float steering = maxSteeringAngle * touchSide;  //* Input.GetAxis("Horizontal");
+        float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
 
         foreach (AxleInfo axleInfo in axleInfos)
         {
