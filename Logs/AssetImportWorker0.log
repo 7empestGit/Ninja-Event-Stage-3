@@ -553,3 +553,32 @@ Received Import Request.
 Start importing Assets/App/Scripts/Car Controllers/CarController.cs using Guid(0344e86ee3e0dcb43a8cec9a1517aec0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '768e746eba07c7285a9ed29ce0851732') in 0.002172 seconds
   Import took 0.004469 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 108.253618 seconds.
+  path: Assets/App/Prefabs/Car.prefab
+  artifactKey: Guid(11c4513beb08e0d489205b2cc28580a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/App/Prefabs/Car.prefab using Guid(11c4513beb08e0d489205b2cc28580a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de4b6fbf11bfdb5b8300cc68dfda04cd') in 0.064568 seconds
+  Import took 0.068398 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000707 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.727 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.32 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1303 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 68.5 MB.
+System memory in use after: 68.0 MB.
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 1820.
+Total: 2.055600 ms (FindLiveObjects: 0.150400 ms CreateObjectMapping: 0.044700 ms MarkObjects: 1.595100 ms  DeleteObjects: 0.264400 ms)
+
