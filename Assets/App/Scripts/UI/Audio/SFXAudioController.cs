@@ -2,32 +2,33 @@ using UnityEngine;
 
 public class SFXAudioController : MonoBehaviour
 {
-    #region Singleton
-    public static SFXAudioController instance;
-
-    private void Awake()
-    {
-        instance = this;
-    }
-    #endregion
-
-    public AudioSource clickSound;
-    [Space]
+    [SerializeField] private GameDataSO gameData;
     [SerializeField] private AudioSource[] audioSources;
+
+    void Start()
+    {
+        foreach (AudioSource audio in audioSources)
+        {
+            audio.volume = gameData.SFXVolume;
+            audio.mute = gameData.isSFXMuted;
+        }
+    }
 
     public void SetActiveSFX(bool value)
     {
-        foreach(AudioSource audio in audioSources)
+        foreach (AudioSource audio in audioSources)
         {
             audio.mute = value;
+            gameData.isSFXMuted = !value;
         }
     }
 
     public void SFXVolume(float value)
     {
-        foreach(AudioSource audio in audioSources)
+        foreach (AudioSource audio in audioSources)
         {
             audio.volume = value;
+            gameData.SFXVolume = value;
         }
     }
 }
