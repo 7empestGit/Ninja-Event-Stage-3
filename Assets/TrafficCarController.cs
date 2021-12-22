@@ -1,15 +1,17 @@
 using Dreamteck.Splines;
 using UnityEngine;
 
-public class TrafficCarSkinChanger : MonoBehaviour
+public class TrafficCarController : MonoBehaviour
 {
     [SerializeField] private GameObject currentCarSkin;
 
     private SplineFollower splineFollower;
-
+    private SplineComputer roadSplineComputer;
     void Start()
     {
+        roadSplineComputer = RoadController.instance.GetComponent<SplineComputer>();
         splineFollower = GetComponent<SplineFollower>();
+        splineFollower.spline = roadSplineComputer;
         OnEndRoadReached();
     }
 
