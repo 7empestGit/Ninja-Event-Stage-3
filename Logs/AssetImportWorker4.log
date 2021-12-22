@@ -44168,3 +44168,68 @@ Total: 2.890700 ms (FindLiveObjects: 0.257800 ms CreateObjectMapping: 0.169000 m
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 453.660891 seconds.
+  path: Assets/App/Prefabs/UI/BackButton.prefab
+  artifactKey: Guid(761f8a6e05d1eed4aa626329feb1783e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/App/Prefabs/UI/BackButton.prefab using Guid(761f8a6e05d1eed4aa626329feb1783e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a36e0684691dce7d3213bbc2631ae99c') in 0.391006 seconds
+  Import took 0.424901 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000407 seconds.
+  path: Assets/App/Prefabs/UI/Button.prefab
+  artifactKey: Guid(eb3c410abc778724d9bbb3d0de345926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/App/Prefabs/UI/Button.prefab using Guid(eb3c410abc778724d9bbb3d0de345926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a2b0988989a0507ffc262983caa857d') in 0.044619 seconds
+  Import took 0.056756 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 87.972255 seconds.
+  path: Assets/App/Prefabs/TrafficCarPrefab.prefab
+  artifactKey: Guid(da3ea3c4510e7f7458aa1ee492b6d613) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/App/Prefabs/TrafficCarPrefab.prefab using Guid(da3ea3c4510e7f7458aa1ee492b6d613) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7353e024712385f10c7ad3bbdb803d74') in 0.097422 seconds
+  Import took 0.121125 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 32.328158 seconds.
+  path: Assets/App/Prefabs/TrafficCarPrefab.prefab
+  artifactKey: Guid(da3ea3c4510e7f7458aa1ee492b6d613) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/App/Prefabs/TrafficCarPrefab.prefab using Guid(da3ea3c4510e7f7458aa1ee492b6d613) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c22d19deb3154d4b30371a41a6d4f272') in 0.017478 seconds
+  Import took 0.033220 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.144077 seconds.
+  path: Assets/App/Prefabs/TrafficCarPrefab.prefab
+  artifactKey: Guid(da3ea3c4510e7f7458aa1ee492b6d613) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/App/Prefabs/TrafficCarPrefab.prefab using Guid(da3ea3c4510e7f7458aa1ee492b6d613) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bd6fba75086740ab2a6c5eb33fc4450') in 0.022591 seconds
+  Import took 0.033933 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.366939 seconds.
+  path: Assets/App/Prefabs/TrafficCarPrefab.prefab
+  artifactKey: Guid(da3ea3c4510e7f7458aa1ee492b6d613) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/App/Prefabs/TrafficCarPrefab.prefab using Guid(da3ea3c4510e7f7458aa1ee492b6d613) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '405cffabc2caa2a1d9fe4ce35cbb9e04') in 0.022175 seconds
+  Import took 0.045729 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1021.379554 seconds.
+  path: Assets/Dreamteck/Splines/PlaymakerActions.unitypackage
+  artifactKey: Guid(9c6565d620e1e8943a2194cba93f2d27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dreamteck/Splines/PlaymakerActions.unitypackage using Guid(9c6565d620e1e8943a2194cba93f2d27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebd927594928a1d2e5106aa4688e97f4') in 0.041841 seconds
+  Import took 0.070069 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.353748 seconds.
+  path: Assets/Dreamteck/Splines/Examples.unitypackage
+  artifactKey: Guid(dd726bdc743dca44888d2627b27267c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dreamteck/Splines/Examples.unitypackage using Guid(dd726bdc743dca44888d2627b27267c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e01ff66ca3064b2fa8feda7079347d05') in 0.048460 seconds
+  Import took 0.060119 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
