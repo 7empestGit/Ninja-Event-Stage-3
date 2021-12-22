@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarSkinHolder : MonoBehaviour
+public class TrafficCarSkinHolder : MonoBehaviour
 {
     [SerializeField] private GameObject[] carModels;
 
     #region Singleton
-    public static CarSkinHolder instance;
+    public static TrafficCarSkinHolder instance;
     void Awake()
     {
         if (instance != null && instance != this)
