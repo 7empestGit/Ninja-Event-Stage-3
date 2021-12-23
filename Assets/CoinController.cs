@@ -8,6 +8,7 @@ public class CoinController : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         GameManager.instance.CollectedCoins++;
+        PlayStateUIManager.instance.UICoinUpdate();
         coinParticleSystem.Play();
         Destroy(coinObject);
         Destroy(gameObject, 1f);
