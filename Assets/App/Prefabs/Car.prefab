@@ -597,6 +597,7 @@ GameObject:
   - component: {fileID: 3394889083948081143}
   - component: {fileID: 2618492499607668044}
   - component: {fileID: 2618492499607668047}
+  - component: {fileID: 1171343546}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -628,7 +629,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2618492499607668045}
   serializedVersion: 2
-  m_Mass: 2000
+  m_Mass: 3000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -657,8 +658,24 @@ MonoBehaviour:
     rightWheel: {fileID: 4701921501986910783}
     motor: 1
     steering: 0
-  maxMotorTorque: 400
-  maxSteeringAngle: 30
+  maxMotorTorque: 300
+  maxSteeringAngle: 20
+--- !u!114 &1171343546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2618492499607668045}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e312ebd0d6dab66408c0207481e2d180, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tireSmokeFX: {fileID: 0}
+  wheels:
+  - {fileID: 637138620593678368}
+  - {fileID: 4701921501986910783}
 --- !u!1 &4701921501986910780
 GameObject:
   m_ObjectHideFlags: 0
