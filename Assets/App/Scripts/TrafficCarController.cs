@@ -1,11 +1,11 @@
 using Dreamteck.Splines;
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class TrafficCarController : MonoBehaviour
 {
     [SerializeField] private GameObject currentCarSkin;
-
     private SplineFollower splineFollower;
 
     void Start()
@@ -28,7 +28,6 @@ public class TrafficCarController : MonoBehaviour
         Vector2 offset = new Vector2(yOffset, 0);
         splineFollower.offsetModifier.AddKey(offset, 0, 1);
         splineFollower.offsetModifier.keys[0].interpolation = AnimationCurve.Constant(0, 1, 1);
-
 
         #region Traffic System
         /*        // Randomizing the spawning position

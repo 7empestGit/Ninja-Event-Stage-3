@@ -1,21 +1,31 @@
 using UnityEngine;
 using Dreamteck.Splines;
-using System.Collections.Generic;
 
 public class TrafficGenerator : MonoBehaviour
 {
     [SerializeField] private int amountOfCars;
     [SerializeField] private GameObject carPrefab;
 
-    public List<GameObject> carList;
+    [SerializeField] private SplineComputer roadSplineComputer;
 
     void Start()
     {
-        for(int i = 0; i < amountOfCars; i++)
+        double prevDistance = 0.1f;
+        for (int i = 0; i < amountOfCars; i++)
         {
-            carPrefab.name = $"TrafficCar #{i}";
-            Instantiate(carPrefab, transform);
-            carList.Add(carPrefab);
+            double finalDistance = prevDistance + Random.Range(0.01f, 0.09f);
+            GameObject carInstance = Instantiate(carPrefab, transform);
+            SplineFollower carInstanceSplineFollower = carInstance.GetComponent<SplineFollower>();
+            carInstanceSplineFollower.spline = roadSplineComputer;
+            carInstance.name = $"Traffic Car #{i}";
+
+            carInstanceSplineFollower.result.percent = finalDistance;
+            prevDistance = finalDistance;
         }
+    }
+
+    private void SpawnCarOnRandomPos()
+    {
+
     }
 }
