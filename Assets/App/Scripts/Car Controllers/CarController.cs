@@ -18,9 +18,10 @@ public class CarController : MonoBehaviour
     [SerializeField] private float maxMotorTorque;
     [SerializeField] private float maxSteeringAngle;
 
-    private void Start()
+    void Start()
     {
         GetComponent<Rigidbody>().velocity = transform.forward * 10f;
+        GetComponent<Rigidbody>().centerOfMass += new Vector3(0, -0.5f, 0);
     }
 
     // finds the corresponding visual wheel
