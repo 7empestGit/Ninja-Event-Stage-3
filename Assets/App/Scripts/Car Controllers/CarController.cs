@@ -21,7 +21,7 @@ public class CarController : MonoBehaviour
     void Start()
     {
         GetComponent<Rigidbody>().velocity = transform.forward * 10f;
-        GetComponent<Rigidbody>().centerOfMass += new Vector3(0, -0.5f, 0);
+        GetComponent<Rigidbody>().centerOfMass += new Vector3(0, -1f, 0f);
     }
 
     // finds the corresponding visual wheel

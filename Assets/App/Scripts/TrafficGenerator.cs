@@ -10,7 +10,7 @@ public class TrafficGenerator : MonoBehaviour
 
     void Start()
     {
-        double prevDistance = 0.1f;
+        double prevDistance = 0.05f;
         for (int i = 0; i < amountOfCars; i++)
         {
             double finalDistance = prevDistance + Random.Range(0.01f, 0.09f);
