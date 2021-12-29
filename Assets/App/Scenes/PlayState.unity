@@ -1433,7 +1433,7 @@ MonoBehaviour:
   meshCollider: {fileID: 897961531}
   filter: {fileID: 897961528}
   meshRenderer: {fileID: 897961527}
-  mesh: {fileID: 1473044364}
+  mesh: {fileID: 1295478299}
   colliderUpdateRate: 0.2
   channels:
   - name: Channel 1
@@ -1875,7 +1875,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897961525}
-  m_Mesh: {fileID: 1473044364}
+  m_Mesh: {fileID: 1295478299}
 --- !u!114 &897961529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3171,7 +3171,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1473044364}
+  m_Mesh: {fileID: 1295478299}
 --- !u!1 &952187184
 GameObject:
   m_ObjectHideFlags: 0
@@ -3196,7 +3196,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952187184}
-  m_LocalRotation: {x: 0.22711068, y: -0.11893744, z: 0.027957648, w: 0.9661744}
+  m_LocalRotation: {x: 0.2271107, y: -0.11893747, z: 0.027957655, w: 0.9661744}
   m_LocalPosition: {x: 4.211696, y: 12.54, z: -145.57764}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3321,7 +3321,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.22711068, y: -0.11893744, z: 0.027957648, w: 0.9661744}
+  m_LocalRotation: {x: 0.2271107, y: -0.11893747, z: 0.027957655, w: 0.9661744}
   m_LocalPosition: {x: 4.211696, y: 12.54, z: -145.57764}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -3578,7 +3578,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3394889083948081143, guid: e09e0f88efb378745be4d48dbaa9004d, type: 3}
   m_PrefabInstance: {fileID: 1788546971}
   m_PrefabAsset: {fileID: 0}
---- !u!43 &1473044364
+--- !u!43 &1295478299
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3913,7 +3913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2618492499607668047, guid: e09e0f88efb378745be4d48dbaa9004d, type: 3}
       propertyPath: maxSteeringAngle
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3394889083948081143, guid: e09e0f88efb378745be4d48dbaa9004d, type: 3}
       propertyPath: m_RootOrder
