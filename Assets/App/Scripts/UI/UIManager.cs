@@ -24,6 +24,4 @@ public class UIManager : MonoBehaviour
     {
         menuPanel.SetActive(true);
     }
-
-
 }
