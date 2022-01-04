@@ -16,5 +16,5 @@ MonoBehaviour:
   MusicVolume: 1
   isSFXMuted: 0
   isMusicMuted: 0
-  CoinAmount: 50
+  CoinAmount: 600
   SelectedCarID: 0

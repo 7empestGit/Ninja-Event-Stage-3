@@ -5,5 +5,7 @@ public class CarDataSO : ScriptableObject
 {
     public int CarID;
     public int CarPrice;
+    public bool IsBought;
+    public bool IsSelected;
     public GameObject CarPrefab;
 }
