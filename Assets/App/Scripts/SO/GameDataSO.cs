@@ -9,4 +9,8 @@ public class GameDataSO : ScriptableObject
     public bool isSFXMuted;
     public bool isMusicMuted;
     #endregion
+
+    public int CoinAmount;
+
+    public int SelectedCarID;
 }

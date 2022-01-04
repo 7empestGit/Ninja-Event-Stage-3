@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private GameDataSO gameData;
+    
     #region Singleton
     public static GameManager instance;
     void Awake()
@@ -15,5 +17,10 @@ public class GameManager : MonoBehaviour
     {
         set { collectedCoins = value; }
         get { return collectedCoins; }
+    }
+
+    public void UpdateCollectedCoins()
+    {
+        gameData.CoinAmount += collectedCoins;
     }
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class MainMenuUIManager : MonoBehaviour
 {
@@ -7,7 +8,6 @@ public class MainMenuUIManager : MonoBehaviour
     [SerializeField] private GameObject optionsPanel;
     [SerializeField] private GameObject creditsPanel;
     [SerializeField] private GameObject quitPanel;
-
 
     #region Button methods
     public void PlayGame()

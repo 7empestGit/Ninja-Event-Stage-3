@@ -17,11 +17,11 @@ public class CarController : MonoBehaviour
     [SerializeField] private List<AxleInfo> axleInfos;
     [SerializeField] private float maxMotorTorque;
     [SerializeField] private float maxSteeringAngle;
-
+    [SerializeField] private Rigidbody carRigidbody;
     void Start()
     {
-        GetComponent<Rigidbody>().velocity = transform.forward * 10f;
-        GetComponent<Rigidbody>().centerOfMass += new Vector3(0, -1f, 0f);
+        //carRigidbody.velocity = transform.forward * 40f;
+        carRigidbody.centerOfMass += new Vector3(0, -1f, 0f);
     }
 
     // finds the corresponding visual wheel
@@ -39,7 +39,6 @@ public class CarController : MonoBehaviour
         Quaternion rotation;
         collider.GetWorldPose(out position, out rotation);
 
-        //visualWheel.transform.position = position;
         visualWheel.transform.rotation = rotation;
     }
 
@@ -67,7 +66,8 @@ public class CarController : MonoBehaviour
         }*/
         #endregion
 
-        float motor = maxMotorTorque;   //* Input.GetAxis("Vertical");
+        float motor = maxMotorTorque;
+        carRigidbody.AddForce(transform.forward * motor);
         float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
 
         foreach (AxleInfo axleInfo in axleInfos)
@@ -85,5 +85,25 @@ public class CarController : MonoBehaviour
             ApplyLocalPositionToVisuals(axleInfo.leftWheel);
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);
         }
+    }
+
+    public void StopCar()
+    {
+        //slow the velocity by 50%
+        carRigidbody.velocity *= 0.5f;
+        maxSteeringAngle = 0;
+        foreach (AxleInfo axleInfo in axleInfos)
+        {
+            if (axleInfo.motor)
+            {
+                axleInfo.leftWheel.motorTorque = 0;
+                axleInfo.rightWheel.motorTorque = 0;
+
+                axleInfo.leftWheel.brakeTorque = maxMotorTorque * 50f;
+                axleInfo.rightWheel.brakeTorque = maxMotorTorque * 50f;
+            }
+        }
+        // turn off the script
+        enabled = false;
     }
 }
