@@ -15,5 +15,5 @@ MonoBehaviour:
   CarID: 0
   CarPrice: 100
   IsBought: 1
-  IsSelected: 1
+  IsSelected: 0
   CarPrefab: {fileID: 0}
