@@ -16,8 +16,8 @@ public class UIManager : MonoBehaviour
     {
         sfxSlider.value = gameData.SFXVolume;
         musicSlider.value = gameData.MusicVolume;
-        sfxToggle.isOn = !gameData.isSFXMuted;
-        musicToggle.isOn = !gameData.isMusicMuted;
+        sfxToggle.isOn = gameData.isSFXMuted;
+        musicToggle.isOn = gameData.isMusicMuted;
     }
 
     public void ReturnToMainMenu()

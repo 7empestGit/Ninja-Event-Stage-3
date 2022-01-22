@@ -14,7 +14,7 @@ public class MusicAudioController : MonoBehaviour
     public void SetActiveMusic(bool value)
     {
         audioSource.mute = value;
-        gameData.isMusicMuted = !value;
+        gameData.isMusicMuted = value;
     }
 
     public void MusicVolume(float value)

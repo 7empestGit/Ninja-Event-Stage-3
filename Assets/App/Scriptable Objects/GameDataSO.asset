@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25f26242be1c6eb4a8258aec63f55c9f, type: 3}
   m_Name: GameDataSO
   m_EditorClassIdentifier: 
-  SFXVolume: 1
+  SFXVolume: 0.646
   MusicVolume: 1
-  isSFXMuted: 0
-  isMusicMuted: 0
+  isSFXMuted: 1
+  isMusicMuted: 1
   CoinAmount: 602
   SelectedCarID: 1
