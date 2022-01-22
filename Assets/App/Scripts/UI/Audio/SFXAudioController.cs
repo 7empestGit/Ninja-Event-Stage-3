@@ -16,7 +16,6 @@ public class SFXAudioController : MonoBehaviour
 
     public void SetActiveSFX(bool value)
     {
-        Debug.Log("setactivesfx");
         foreach (AudioSource audio in audioSources)
         {
             audio.mute = value;
