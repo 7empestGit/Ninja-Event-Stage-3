@@ -1,7 +1,5 @@
-using UnityEngine;
-
-[CreateAssetMenu(fileName = "NewGameData", menuName = "Scriptable Objects/GameDataSO", order = 0)]
-public class GameDataSO : ScriptableObject
+[System.Serializable]
+public class GameData
 {
     #region Audio
     public float SFXVolume;

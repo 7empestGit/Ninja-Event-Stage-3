@@ -1,9 +1,10 @@
 using UnityEngine;
+using Cinemachine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameDataSO gameData;
-    [SerializeField] private Cinemachine.CinemachineVirtualCamera mainCamera;
+    [SerializeField] private GameData gameData;
+    [SerializeField] private CinemachineVirtualCamera mainCamera;
     [SerializeField] private Transform startPoint;
     [SerializeField] private GameObject[] carsPrefab;
 
@@ -25,6 +26,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        // Load data
+        gameData = GameDataHandler.LoadState();
         // Instantiating selected car
         GameObject carInstance = Instantiate(carsPrefab[gameData.SelectedCarID], startPoint.position, Quaternion.identity);
         // Setting camera
@@ -34,6 +37,11 @@ public class GameManager : MonoBehaviour
 
     public void UpdateCollectedCoins()
     {
+        // Load data
+        gameData = GameDataHandler.LoadState();
+        // Update coin amount
         gameData.CoinAmount += collectedCoins;
+        // Save data
+        GameDataHandler.SaveState(gameData);
     }
 }

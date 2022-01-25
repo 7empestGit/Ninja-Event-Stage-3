@@ -10,14 +10,19 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Toggle sfxToggle;
     [SerializeField] private Toggle musicToggle;
 
-    [SerializeField] private GameDataSO gameData;
+    [SerializeField] private GameData gameData;
 
     void Start()
     {
+        // Load data
+        gameData = GameDataHandler.LoadState();
+        // apply all the values to the sliders and toggles
         sfxSlider.value = gameData.SFXVolume;
         musicSlider.value = gameData.MusicVolume;
         sfxToggle.isOn = gameData.isSFXMuted;
         musicToggle.isOn = gameData.isMusicMuted;
+        // save data
+        GameDataHandler.SaveState(gameData);
     }
 
     public void ReturnToMainMenu()

@@ -1,24 +1,40 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System;
+using DynamicBox.SaveManagement;
 
 public class ShopUIManager : MonoBehaviour
 {
-    [SerializeField] private GameDataSO gameData;
+    [Header("Texts")]
     [SerializeField] private TextMeshProUGUI coinText;
     [SerializeField] private TextMeshProUGUI priceText;
     [SerializeField] private TextMeshProUGUI buyButtonText;
+    [Header("Buttons")]
     [SerializeField] private Button buyButton;
     [SerializeField] private Button switchRightButton;
     [SerializeField] private Button switchLeftButton;
+    [Header("GameObjects")]
     [SerializeField] private GameObject popupPanel;
     [SerializeField] private GameObject[] carsArray;
+    [Header("Datas")]
+    [SerializeField] private GameData gameData;
     [SerializeField] private CarDataSO[] carsDataArray;
 
+    [SerializeField] private VehicleData[] vehicleDatas;
+
     private int viewingCarID;
+
     void Start()
     {
+        // Load data
+        gameData = GameDataHandler.LoadState();
+        for (int i = 0; i < vehicleDatas.Length; i++)
+        {
+            VehicleDataHandler.SaveState(vehicleDatas[i], i);
+        }
+        Debug.Log("Saved");
+
+
         viewingCarID = gameData.SelectedCarID;
         // Loading current selected car
         DeactivateAllCars();
@@ -46,6 +62,8 @@ public class ShopUIManager : MonoBehaviour
 
     public void BuyCar()
     {
+        // Load data
+        gameData = GameDataHandler.LoadState();
         if (!carsDataArray[viewingCarID].IsBought)
         {
             if (gameData.CoinAmount >= carsDataArray[viewingCarID].CarPrice)
@@ -64,6 +82,8 @@ public class ShopUIManager : MonoBehaviour
         {
             SelectCar();
         }
+        // Save data
+        GameDataHandler.SaveState(gameData);
     }
     #endregion
 

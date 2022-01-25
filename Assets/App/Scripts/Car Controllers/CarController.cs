@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Dreamteck.Splines;
 
 [System.Serializable]
 public class AxleInfo
@@ -18,6 +16,7 @@ public class CarController : MonoBehaviour
     [SerializeField] private float maxMotorTorque;
     [SerializeField] private float maxSteeringAngle;
     [SerializeField] private Rigidbody carRigidbody;
+
     void Start()
     {
         //carRigidbody.velocity = transform.forward * 40f;
@@ -67,7 +66,7 @@ public class CarController : MonoBehaviour
         #endregion
 
         float motor = maxMotorTorque;
-        carRigidbody.AddForce(transform.forward * motor);
+        //carRigidbody.AddForce(transform.forward * motor);
         float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
 
         foreach (AxleInfo axleInfo in axleInfos)
