@@ -2,13 +2,9 @@ using UnityEngine;
 
 public class SaveSystem : MonoBehaviour
 {
-    void Start()
+    void Awake()
     {
-        
-    }
-
-    void Update()
-    {
-        
+        // AutoLoad data on the scene begins
+        GameDataHandler.LoadState();
     }
 }
