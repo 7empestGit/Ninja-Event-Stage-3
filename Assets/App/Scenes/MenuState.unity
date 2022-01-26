@@ -391,7 +391,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.475, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -548,8 +548,8 @@ RectTransform:
   m_Father: {fileID: 718574993}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.475, y: 0}
-  m_AnchorMax: {x: 0.475, y: 1}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -813,7 +813,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -920,13 +920,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1460ca8d481219346a16182d7603846e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameData:
-    SFXVolume: 0.475
-    MusicVolume: 1
-    isSFXMuted: 1
-    isMusicMuted: 1
-    CoinAmount: 100
-    SelectedCarID: 0
   audioSource: {fileID: 172269590}
 --- !u!224 &219640247 stripped
 RectTransform:
@@ -1130,10 +1123,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 176c512e9a1236647a61973bd21d03d7, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.475
+  m_Volume: 1
   m_Pitch: 2.5
   Loop: 0
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -1449,7 +1442,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
       - m_Target: {fileID: 297892233}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
@@ -1461,7 +1454,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!1 &486321575
 GameObject:
   m_ObjectHideFlags: 0
@@ -2241,13 +2234,6 @@ MonoBehaviour:
   - {fileID: 1456584920}
   - {fileID: 1637737356}
   - {fileID: 587773835}
-  gameData:
-    SFXVolume: 0
-    MusicVolume: 0
-    isSFXMuted: 0
-    isMusicMuted: 0
-    CoinAmount: 0
-    SelectedCarID: 0
   carsDataArray:
   - {fileID: 11400000, guid: 262e8423adef26e4c8300ed7515082d9, type: 2}
   - {fileID: 11400000, guid: 0715fb175ba75d745a9a5fdf54ea597b, type: 2}
@@ -2783,7 +2769,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 2
+        m_CallState: 1
       - m_Target: {fileID: 1625788776}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
@@ -2795,8 +2781,8 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-  m_IsOn: 1
+        m_CallState: 1
+  m_IsOn: 0
 --- !u!1 &1050327619
 GameObject:
   m_ObjectHideFlags: 0
@@ -2840,10 +2826,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 115bd073e648954468b7c76e2b098036, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.475
+  m_Volume: 1
   m_Pitch: 0.9
   Loop: 0
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -3019,7 +3005,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
       - m_Target: {fileID: 1706855575}
         m_TargetAssemblyTypeName: SFXAudioController, Assembly-CSharp
         m_MethodName: SetActiveSFX
@@ -3031,8 +3017,8 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-  m_IsOn: 1
+        m_CallState: 1
+  m_IsOn: 0
 --- !u!1 &1114604960
 GameObject:
   m_ObjectHideFlags: 0
@@ -3152,13 +3138,6 @@ MonoBehaviour:
   musicSlider: {fileID: 450970313}
   sfxToggle: {fileID: 1107923695}
   musicToggle: {fileID: 946079478}
-  gameData:
-    SFXVolume: 0
-    MusicVolume: 0
-    isSFXMuted: 0
-    isMusicMuted: 0
-    CoinAmount: 0
-    SelectedCarID: 0
 --- !u!4 &1179014306
 Transform:
   m_ObjectHideFlags: 0
@@ -4122,7 +4101,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1388468303
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4533,10 +4512,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 373bcc1a10114a344b9de94c41dbb695, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.475
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -5068,10 +5047,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f8c89fee0a0a5e144ad279624aa2585b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.475
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -5505,10 +5484,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 115bd073e648954468b7c76e2b098036, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.475
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -5869,13 +5848,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e31b961a0324f074c8c0517eb63936ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameData:
-    SFXVolume: 0.475
-    MusicVolume: 1
-    isSFXMuted: 1
-    isMusicMuted: 1
-    CoinAmount: 100
-    SelectedCarID: 0
   audioSources:
   - {fileID: 1453611009}
   - {fileID: 1625788776}
@@ -6091,7 +6063,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.475
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -6106,7 +6078,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
       - m_Target: {fileID: 297892233}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
@@ -6118,7 +6090,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!1 &1973374074
 GameObject:
   m_ObjectHideFlags: 0
