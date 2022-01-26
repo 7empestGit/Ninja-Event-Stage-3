@@ -3,7 +3,7 @@ using Cinemachine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameData gameData;
+    private GameData gameData;
     [SerializeField] private CinemachineVirtualCamera mainCamera;
     [SerializeField] private Transform startPoint;
     [SerializeField] private GameObject[] carsPrefab;

@@ -17,7 +17,7 @@ public class ShopUIManager : MonoBehaviour
     [SerializeField] private GameObject popupPanel;
     [SerializeField] private GameObject[] carsArray;
     [Header("Datas")]
-    [SerializeField] private GameData gameData;
+    private GameData gameData;
     [SerializeField] private CarDataSO[] carsDataArray;
 
     [SerializeField] private VehicleData[] vehicleDatas;

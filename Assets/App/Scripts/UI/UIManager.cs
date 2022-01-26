@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Toggle sfxToggle;
     [SerializeField] private Toggle musicToggle;
 
-    [SerializeField] private GameData gameData;
+    private GameData gameData;
 
     void Start()
     {

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SFXAudioController : MonoBehaviour
 {
-    [SerializeField] private GameData gameData;
+    private GameData gameData;
     [SerializeField] private AudioSource[] audioSources;
 
     void Start()
