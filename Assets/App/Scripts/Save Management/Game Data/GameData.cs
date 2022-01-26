@@ -10,5 +10,5 @@ public class GameData
 
     public int CoinAmount;
 
-    public int SelectedCarID;
+    public int SelectedVehicleID;
 }

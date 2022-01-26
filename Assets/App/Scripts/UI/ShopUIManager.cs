@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using DynamicBox.SaveManagement;
 
 public class ShopUIManager : MonoBehaviour
 {
@@ -18,27 +17,44 @@ public class ShopUIManager : MonoBehaviour
     [SerializeField] private GameObject[] carsArray;
     [Header("Datas")]
     private GameData gameData;
-    [SerializeField] private CarDataSO[] carsDataArray;
+    //[SerializeField] private CarDataSO[] vehicleDatas;
 
     [SerializeField] private VehicleData[] vehicleDatas;
 
-    private int viewingCarID;
+    private int viewingVehicleID;
 
     void Start()
     {
         // Load data
         gameData = GameDataHandler.LoadState();
-        for (int i = 0; i < vehicleDatas.Length; i++)
-        {
-            VehicleDataHandler.SaveState(vehicleDatas[i], i);
-        }
-        Debug.Log("Saved");
+        VehicleDatasSaveManager("Load");
 
-
-        viewingCarID = gameData.SelectedCarID;
         // Loading current selected car
+        viewingVehicleID = gameData.SelectedVehicleID;
         DeactivateAllCars();
-        SetActiveCar(viewingCarID, true);
+        SetActiveCar(viewingVehicleID, true);
+    }
+
+    private void VehicleDatasSaveManager(string operation)
+    {
+        if (operation == "Save")
+        {
+            for (int i = 0; i < vehicleDatas.Length; i++)
+            {
+                VehicleDataHandler.SaveState(vehicleDatas[i], i);
+            }
+        }
+        else if (operation == "Load")
+        {
+            for (int i = 0; i < vehicleDatas.Length; i++)
+            {
+                vehicleDatas[i] = VehicleDataHandler.LoadState(i);
+            }
+        }
+        else
+        {
+            Debug.LogError("Wrong save operation!");
+        }
     }
 
     #region Button Methods
@@ -48,28 +64,30 @@ public class ShopUIManager : MonoBehaviour
     }
     public void SwitchLeft()
     {
-        SetActiveCar(viewingCarID, false);
-        viewingCarID--;
-        SetActiveCar(viewingCarID, true);
+        SetActiveCar(viewingVehicleID, false);
+        viewingVehicleID--;
+        SetActiveCar(viewingVehicleID, true);
     }
 
     public void SwitchRight()
     {
-        SetActiveCar(viewingCarID, false);
-        viewingCarID++;
-        SetActiveCar(viewingCarID, true);
+        SetActiveCar(viewingVehicleID, false);
+        viewingVehicleID++;
+        SetActiveCar(viewingVehicleID, true);
     }
 
     public void BuyCar()
     {
         // Load data
         gameData = GameDataHandler.LoadState();
-        if (!carsDataArray[viewingCarID].IsBought)
+        VehicleDatasSaveManager("Load");
+
+        if (!vehicleDatas[viewingVehicleID].IsBought)
         {
-            if (gameData.CoinAmount >= carsDataArray[viewingCarID].CarPrice)
+            if (gameData.CoinAmount >= vehicleDatas[viewingVehicleID].VehiclePrice)
             {
-                gameData.CoinAmount -= carsDataArray[viewingCarID].CarPrice;
-                carsDataArray[viewingCarID].IsBought = true;
+                gameData.CoinAmount -= vehicleDatas[viewingVehicleID].VehiclePrice;
+                vehicleDatas[viewingVehicleID].IsBought = true;
                 SelectCar();
             }
             else
@@ -84,14 +102,15 @@ public class ShopUIManager : MonoBehaviour
         }
         // Save data
         GameDataHandler.SaveState(gameData);
+        VehicleDatasSaveManager("Save");
     }
     #endregion
 
     private void SelectCar()
     {
-        carsDataArray[gameData.SelectedCarID].IsSelected = false;
-        carsDataArray[viewingCarID].IsSelected = true;
-        gameData.SelectedCarID = viewingCarID;
+        vehicleDatas[gameData.SelectedVehicleID].IsSelected = false;
+        vehicleDatas[viewingVehicleID].IsSelected = true;
+        gameData.SelectedVehicleID = viewingVehicleID;
         UpdateBuyButton();
         UpdateUITexts();
     }
@@ -100,8 +119,8 @@ public class ShopUIManager : MonoBehaviour
     private void UpdateUITexts()
     {
         coinText.text = $"COINS: <color=#F9FF00><size=100>{gameData.CoinAmount}";
-        priceText.text = $"{carsDataArray[viewingCarID].CarPrice}";
-        priceText.enabled = carsDataArray[viewingCarID].IsBought ? false : true;
+        priceText.text = $"{vehicleDatas[viewingVehicleID].VehiclePrice}";
+        priceText.enabled = vehicleDatas[viewingVehicleID].IsBought ? false : true;
     }
 
     private void DeactivateAllCars()
@@ -122,12 +141,12 @@ public class ShopUIManager : MonoBehaviour
     private void UpdateSwitchButtons()
     {
         // if the most left one
-        if(viewingCarID == 0)
+        if(viewingVehicleID == 0)
         {
             switchLeftButton.interactable = false;
         }
         // if the most right one
-        else if (viewingCarID == carsArray.Length - 1)
+        else if (viewingVehicleID == carsArray.Length - 1)
         {
             switchRightButton.interactable = false;
         }
@@ -140,12 +159,12 @@ public class ShopUIManager : MonoBehaviour
     
     private void UpdateBuyButton()
     {
-        if (carsDataArray[viewingCarID].IsBought && carsDataArray[viewingCarID].IsSelected)
+        if (vehicleDatas[viewingVehicleID].IsBought && vehicleDatas[viewingVehicleID].IsSelected)
         {
             buyButtonText.text = "SELECTED";
             buyButton.interactable = false;
         }
-        else if (carsDataArray[viewingCarID].IsBought)
+        else if (vehicleDatas[viewingVehicleID].IsBought)
         {
             buyButtonText.text = "SELECT";
             buyButton.interactable = true;

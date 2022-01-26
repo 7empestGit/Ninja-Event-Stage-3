@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         // Load data
         gameData = GameDataHandler.LoadState();
         // Instantiating selected car
-        GameObject carInstance = Instantiate(carsPrefab[gameData.SelectedCarID], startPoint.position, Quaternion.identity);
+        GameObject carInstance = Instantiate(carsPrefab[gameData.SelectedVehicleID], startPoint.position, Quaternion.identity);
         // Setting camera
         mainCamera.Follow = carInstance.transform;
         mainCamera.LookAt = carInstance.transform;
