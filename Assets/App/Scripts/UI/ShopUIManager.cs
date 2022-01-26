@@ -17,17 +17,16 @@ public class ShopUIManager : MonoBehaviour
     [SerializeField] private GameObject[] carsArray;
     [Header("Datas")]
     private GameData gameData;
-    //[SerializeField] private CarDataSO[] vehicleDatas;
-
-    [SerializeField] private VehicleData[] vehicleDatas;
-
+    private VehicleData[] vehicleDatas;
     private int viewingVehicleID;
 
     void Start()
     {
         // Load data
         gameData = GameDataHandler.LoadState();
+        vehicleDatas = new VehicleData[carsArray.Length];
         VehicleDatasSaveManager("Load");
+
 
         // Loading current selected car
         viewingVehicleID = gameData.SelectedVehicleID;
