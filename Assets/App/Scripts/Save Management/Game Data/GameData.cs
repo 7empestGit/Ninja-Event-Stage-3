@@ -17,7 +17,7 @@ public class GameData
         SelectedVehicleID = 0;
         SFXVolume = 1;
         MusicVolume = 1;
-        isMusicMuted = true;
-        isSFXMuted = true;
+        isMusicMuted = false;
+        isSFXMuted = false;
     }
 }
