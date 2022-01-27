@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("start UI");
         // Load data
         gameData = GameDataHandler.LoadState();
         // apply all the values to the sliders and toggles
