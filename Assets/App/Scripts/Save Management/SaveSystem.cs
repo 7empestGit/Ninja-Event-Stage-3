@@ -8,8 +8,8 @@ public class SaveSystem : MonoBehaviour
     void OnEnable()
     {
         // AutoLoad data on object enables
-        if (gameData.isFirstRun)
-       {
+        /*if (gameData.isFirstRun)
+        {
             gameData.isFirstRun = false;
             // Create GameData
             GameDataHandler.SaveState(gameData);
@@ -18,7 +18,7 @@ public class SaveSystem : MonoBehaviour
             {
                 VehicleDataHandler.SaveState(vehicleDatas[i], i);
             }
-       }
+        }*/
         gameData = GameDataHandler.LoadState();
     }
 

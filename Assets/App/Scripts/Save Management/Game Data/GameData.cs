@@ -1,14 +1,13 @@
 [System.Serializable]
 public class GameData
 {
-    public bool isFirstRun;
-    public int CoinAmount;
-    public int SelectedVehicleID;
+    public int CoinAmount = 100;
+    public int SelectedVehicleID = 0;
 
     #region Audio
-    public float SFXVolume;
-    public float MusicVolume;
-    public bool isSFXMuted;
-    public bool isMusicMuted;
+    public float SFXVolume = 1;
+    public float MusicVolume = 1;
+    public bool isSFXMuted = false;
+    public bool isMusicMuted = false;
     #endregion
 }

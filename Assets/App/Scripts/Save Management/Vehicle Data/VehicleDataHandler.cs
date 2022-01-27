@@ -11,6 +11,6 @@ public static class VehicleDataHandler
 
     public static VehicleData LoadState(int id)
     {
-        return saveManager.LoadFromFile<VehicleData>($"VehicleData{id}", new VehicleData(0, 0, false, false));
+        return saveManager.LoadFromFile<VehicleData>($"VehicleData{id}", new VehicleData(id, VehicleInfo.VehiclePrices[id], false, false));
     }
 }
