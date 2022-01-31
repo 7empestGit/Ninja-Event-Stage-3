@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2537613272576681624}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 172.5, z: 0}
 --- !u!33 &3033649972488050234
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4951,6 +4951,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinObject: {fileID: 3033649972488050239}
   coinParticleSystem: {fileID: 4492074289181858937}
+  coinSound: {fileID: 0}
 --- !u!65 &1572267304282113910
 BoxCollider:
   m_ObjectHideFlags: 0
