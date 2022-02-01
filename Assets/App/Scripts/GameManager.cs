@@ -1,5 +1,6 @@
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -43,5 +44,10 @@ public class GameManager : MonoBehaviour
         gameData.CoinAmount += collectedCoins;
         // Save data
         GameDataHandler.SaveState(gameData);
+    }
+
+    public void ResetGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
