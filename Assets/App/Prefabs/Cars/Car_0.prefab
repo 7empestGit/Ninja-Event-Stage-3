@@ -658,7 +658,7 @@ MonoBehaviour:
     motor: 1
     steering: 0
   maxMotorTorque: 2000
-  maxSteeringAngle: 10
+  maxSteeringAngle: 30
   carRigidbody: {fileID: 2618492499607668044}
 --- !u!1 &4701921501986910780
 GameObject:
