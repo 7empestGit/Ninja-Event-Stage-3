@@ -65,9 +65,10 @@ public class CarController : MonoBehaviour
         }
         #endregion
 
+        //touchSide = Input.GetAxis("Horizontal");
         float motor = maxMotorTorque;
         //carRigidbody.AddForce(transform.forward * motor);
-        float steering = maxSteeringAngle * touchSide;//* Input.GetAxis("Horizontal");
+        float steering = maxSteeringAngle * touchSide;
 
         foreach (AxleInfo axleInfo in axleInfos)
         {
