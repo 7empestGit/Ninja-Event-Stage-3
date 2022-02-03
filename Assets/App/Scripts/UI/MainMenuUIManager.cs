@@ -12,7 +12,7 @@ public class MainMenuUIManager : MonoBehaviour
     #region Button methods
     public void PlayGame()
     {
-        SceneManager.LoadScene("PlayState");
+        SceneManager.LoadScene("Level0");
     }
 
     public void OpenShop()

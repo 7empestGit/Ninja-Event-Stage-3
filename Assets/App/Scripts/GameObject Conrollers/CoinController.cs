@@ -8,7 +8,15 @@ public class CoinController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        GameManager.instance.CollectedCoins++;
+        if (GameManager.instance.IsPowerupActive)
+        {
+            GameManager.instance.CollectedCoins += 2;
+        }
+        else
+        {
+            GameManager.instance.CollectedCoins++;
+        }
+        
         PlayStateUIManager.instance.UICoinUpdate();
         coinSound.Play();
         coinParticleSystem.Play();

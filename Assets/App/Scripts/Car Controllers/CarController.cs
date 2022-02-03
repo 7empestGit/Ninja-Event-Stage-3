@@ -44,30 +44,30 @@ public class CarController : MonoBehaviour
     public void FixedUpdate()
     {
         #region Screen Touch
-        /*float touchSide = 0;
+        float touchSide = 0;
         if (Input.touchCount == 1)
         {
             var touch = Input.touches[0];
             // left side of the screen
             if (touch.position.x < Screen.width / 2)
             {
-                touchSide = 1;
+                touchSide = -1;
             }
             // right side of the screen
             else if (touch.position.x > Screen.width / 2)
             {
-                touchSide = -1;
+                touchSide = 1;
             }
         }
         else
         {
             touchSide = 0;
-        }*/
+        }
         #endregion
 
         float motor = maxMotorTorque;
         //carRigidbody.AddForce(transform.forward * motor);
-        float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
+        float steering = maxSteeringAngle * touchSide;//* Input.GetAxis("Horizontal");
 
         foreach (AxleInfo axleInfo in axleInfos)
         {

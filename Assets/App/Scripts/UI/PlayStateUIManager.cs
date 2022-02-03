@@ -1,10 +1,13 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+
 public class PlayStateUIManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI coinText, coinTextFinish;
     [SerializeField] private GameObject finishPanel;
+    [SerializeField] private GameObject doubleCoinPowerupSprite;
 
     #region Singleton
     public static PlayStateUIManager instance;
@@ -38,5 +41,10 @@ public class PlayStateUIManager : MonoBehaviour
     public void OpenMainMenu()
     {
         SceneManager.LoadScene("MenuState");
+    }
+
+    public void ShowPowerup()
+    {
+        doubleCoinPowerupSprite.SetActive(true);
     }
 }

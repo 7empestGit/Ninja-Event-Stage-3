@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.SceneManagement;
@@ -9,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform startPoint;
     [SerializeField] private GameObject[] carsPrefab;
 
+    public bool IsPowerupActive;
 
     private int collectedCoins;
     public int CollectedCoins
@@ -50,4 +52,7 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void ActivatePowerup() { IsPowerupActive = true; }
+    public void DeactivatePowerup() { IsPowerupActive = false; }
 }
