@@ -30,9 +30,9 @@ public class SplineGenerator : MonoBehaviour
         SplinePoint[] splines = splineComputer.GetPoints();
         for (int i = 5; i < splines.Length; i += 2)
         {
-            int isPlus = Random.Range(0, 2) == 0 ? 1 : -1;
-            Vector3 offset = new Vector3(0, 0, Random.Range(3, 6) * isPlus);
-            GameObject propInstance = Instantiate(props[Random.Range(0, props.Length - 1)], splines[i].position + offset, new Quaternion(0, Random.Range(0, 360f), 0, 0));
+            int isPlus = Random.Range(0, 2) == 0 ? 1 : -1; // randomizing the left/right side of the road
+            Vector3 offset = new Vector3(0, 1, Random.Range(3, 6) * isPlus);    // setting the offset
+            GameObject propInstance = Instantiate(props[Random.Range(0, props.Length - 1)], splines[i].position + offset, new Quaternion(0, Random.Range(0f, 360f), 0, 360));
             propInstance.transform.parent = propsParent.transform;
             if (Random.Range(0, 2) == 1) { i++; }
         }
