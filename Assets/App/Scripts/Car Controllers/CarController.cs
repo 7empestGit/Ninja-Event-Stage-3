@@ -43,6 +43,9 @@ public class CarController : MonoBehaviour
 
     public void FixedUpdate()
     {
+        // Limiting speed to 15
+        carRigidbody.velocity = Vector3.ClampMagnitude(carRigidbody.velocity, 15f);
+
         #region Screen Touch
         float touchSide = 0;
         if (Input.touchCount == 1)
