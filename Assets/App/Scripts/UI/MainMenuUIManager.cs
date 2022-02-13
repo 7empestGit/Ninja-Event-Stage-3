@@ -4,6 +4,7 @@ using TMPro;
 
 public class MainMenuUIManager : MonoBehaviour
 {
+    [SerializeField] private GameObject levelsPanel;
     [SerializeField] private GameObject shopPanel;
     [SerializeField] private GameObject optionsPanel;
     [SerializeField] private GameObject creditsPanel;
@@ -13,6 +14,16 @@ public class MainMenuUIManager : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene("Level0");
+    }
+
+    public void PlayProcedural()
+    {
+        SceneManager.LoadScene("ProceduralLevel");
+    }
+
+    public void OpenLevels()
+    {
+        levelsPanel.SetActive(true);
     }
 
     public void OpenShop()
