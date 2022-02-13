@@ -117,7 +117,7 @@ public class ShopUIManager : MonoBehaviour
 
     private void UpdateUITexts()
     {
-        coinText.text = $"COINS: <color=#F9FF00><size=100>{gameData.CoinAmount}";
+        coinText.text = $"COINS: <color=#F1FF0F>{gameData.CoinAmount}";
         priceText.text = $"{vehicleDatas[viewingVehicleID].VehiclePrice}";
         priceText.enabled = vehicleDatas[viewingVehicleID].IsBought ? false : true;
     }
