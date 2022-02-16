@@ -1723,11 +1723,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 147001700647987870, guid: eb3c410abc778724d9bbb3d0de345926, type: 3}
       propertyPath: m_text
-      value: PROCEDURAL
+      value: GENERATED
       objectReference: {fileID: 0}
     - target: {fileID: 147001700647987870, guid: eb3c410abc778724d9bbb3d0de345926, type: 3}
       propertyPath: m_fontSize
-      value: 45.5
+      value: 49.45
       objectReference: {fileID: 0}
     - target: {fileID: 147001702352784816, guid: eb3c410abc778724d9bbb3d0de345926, type: 3}
       propertyPath: m_SpriteState.m_PressedSprite
@@ -1887,7 +1887,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 57b60a9c9a743824f9474fa1757a489c, type: 3}
     - target: {fileID: 147001702352784822, guid: eb3c410abc778724d9bbb3d0de345926, type: 3}
       propertyPath: m_Name
-      value: Button (1)
+      value: PlayProceduralButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb3c410abc778724d9bbb3d0de345926, type: 3}
@@ -2004,11 +2004,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 147001700647987870, guid: eb3c410abc778724d9bbb3d0de345926, type: 3}
       propertyPath: m_text
-      value: NON-PROCEDURAL
+      value: NORMAL
       objectReference: {fileID: 0}
     - target: {fileID: 147001700647987870, guid: eb3c410abc778724d9bbb3d0de345926, type: 3}
       propertyPath: m_fontSize
-      value: 27.7
+      value: 46.35
       objectReference: {fileID: 0}
     - target: {fileID: 147001702352784816, guid: eb3c410abc778724d9bbb3d0de345926, type: 3}
       propertyPath: m_SpriteState.m_PressedSprite
@@ -2168,7 +2168,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 57b60a9c9a743824f9474fa1757a489c, type: 3}
     - target: {fileID: 147001702352784822, guid: eb3c410abc778724d9bbb3d0de345926, type: 3}
       propertyPath: m_Name
-      value: Button
+      value: PlayNormalButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb3c410abc778724d9bbb3d0de345926, type: 3}

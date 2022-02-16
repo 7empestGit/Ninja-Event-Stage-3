@@ -18,7 +18,7 @@ public class MainMenuUIManager : MonoBehaviour
 
     public void PlayProcedural()
     {
-        SceneManager.LoadScene("ProceduralLevel");
+        SceneManager.LoadScene("ProceduralMode");
     }
 
     public void OpenLevels()

@@ -17,6 +17,8 @@ public class CarController : MonoBehaviour
     [SerializeField] private float maxSteeringAngle;
     [SerializeField] private Rigidbody carRigidbody;
 
+    public int isInvert = 1;
+
     void Start()
     {
         //carRigidbody.velocity = transform.forward * 40f;
@@ -68,10 +70,9 @@ public class CarController : MonoBehaviour
         }
         #endregion
 
-        //touchSide = Input.GetAxis("Horizontal");
+        touchSide = Input.GetAxis("Horizontal");
         float motor = maxMotorTorque;
-        //carRigidbody.AddForce(transform.forward * motor);
-        float steering = maxSteeringAngle * touchSide;
+        float steering = maxSteeringAngle * touchSide * isInvert;
 
         foreach (AxleInfo axleInfo in axleInfos)
         {
@@ -108,5 +109,10 @@ public class CarController : MonoBehaviour
         }
         // turn off the script
         enabled = false;
+    }
+
+    public void ExplodeCar()
+    {
+
     }
 }
