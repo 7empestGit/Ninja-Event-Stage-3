@@ -19,7 +19,7 @@ public class DoubleCoinPowerupUIController : MonoBehaviour
             poweupSprite.fillAmount -= Time.deltaTime / 10f;
             yield return null;
         }
-        GameManager.instance.IsPowerupActive = false;
+        GameManager.Instance.IsPowerupActive = false;
         Destroy(gameObject);
     }
 }

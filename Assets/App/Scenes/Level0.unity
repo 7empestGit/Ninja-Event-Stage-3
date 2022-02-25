@@ -180,11 +180,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 256457536}
-  startPoint: {fileID: 1310019610}
+  splineComputer: {fileID: 0}
   carsPrefab:
   - {fileID: 4073743404794505593, guid: 8d4d2490a8b83e444b9dd3d5e588cf98, type: 3}
   - {fileID: 6452563012969250178, guid: 705374f612c9e0b40bfbd64c157f2eff, type: 3}
   - {fileID: 2795639147136414435, guid: 66a6f0b223577034f8aada487ff6f3f8, type: 3}
+  startPoint: {fileID: 1310019610}
   IsPowerupActive: 0
 --- !u!1001 &60208584
 PrefabInstance:
@@ -6642,6 +6643,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinText: {fileID: 1734755394}
   coinTextFinish: {fileID: 93139003}
+  resetButton: {fileID: 0}
   finishPanel: {fileID: 672141777}
   doubleCoinPowerupSprite: {fileID: 933969633}
 --- !u!4 &725552318
@@ -10619,6 +10621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSources:
   - {fileID: 1114302885}
+  - {fileID: 1233740074}
 --- !u!4 &1473435020
 Transform:
   m_ObjectHideFlags: 0

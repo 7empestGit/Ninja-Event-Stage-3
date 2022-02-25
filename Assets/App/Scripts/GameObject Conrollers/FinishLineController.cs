@@ -8,8 +8,10 @@ public class FinishLineController : MonoBehaviour
         {
             if (other.GetComponent<CarController>() != null)
             {
-                other.GetComponent<CarController>().StopCar();
-                PlayStateUIManager.instance.OpenFinishPanel();
+                CarController otherCarController = other.GetComponent<CarController>();
+                otherCarController.isWon = true;
+                otherCarController.StopCar();
+                PlayStateUIManager.Instance.OpenFinishPanel();
             }
         }
     }

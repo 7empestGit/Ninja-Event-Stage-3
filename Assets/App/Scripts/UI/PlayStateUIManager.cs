@@ -6,14 +6,16 @@ using TMPro;
 public class PlayStateUIManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI coinText, coinTextFinish;
+    [SerializeField] private GameObject resetButton;
     [SerializeField] private GameObject finishPanel;
+    [SerializeField] private GameObject losePanel;
     [SerializeField] private GameObject doubleCoinPowerupSprite;
 
     #region Singleton
-    public static PlayStateUIManager instance;
+    public static PlayStateUIManager Instance;
     void Awake()
     {
-        instance = this;
+        Instance = this;
     }
     #endregion
 
@@ -23,14 +25,20 @@ public class PlayStateUIManager : MonoBehaviour
     }
     public void UICoinUpdate()
     {
-        coinText.text = $"{GameManager.instance.CollectedCoins}";
+        coinText.text = $"{GameManager.Instance.CollectedCoins}";
     }
 
     public void OpenFinishPanel()
     {
+        resetButton.SetActive(false);
         finishPanel.SetActive(true);
         coinTextFinish.text = coinText.text;
-        GameManager.instance.UpdateCollectedCoins();
+        GameManager.Instance.UpdateCollectedCoins();
+    }
+
+    public void OpenLosePanel()
+    {
+        losePanel.SetActive(true);
     }
 
     public void NextLevel()

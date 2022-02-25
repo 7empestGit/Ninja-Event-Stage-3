@@ -17,8 +17,11 @@ public class CarController : MonoBehaviour
     [SerializeField] private float maxSteeringAngle;
     [SerializeField] private Rigidbody carRigidbody;
 
-    public int isInvert = 1;
-
+    [SerializeField] private ParticleSystem explosionParticle;
+    [SerializeField] private AudioSource explosionSound;
+    [SerializeField] private ParticleSystem smokeParticle;
+    [HideInInspector] public int isInvert = 1;
+    [HideInInspector] public bool isWon;
     void Start()
     {
         //carRigidbody.velocity = transform.forward * 40f;
@@ -70,7 +73,7 @@ public class CarController : MonoBehaviour
         }
         #endregion
 
-        touchSide = Input.GetAxis("Horizontal");
+        //touchSide = Input.GetAxis("Horizontal");
         float motor = maxMotorTorque;
         float steering = maxSteeringAngle * touchSide * isInvert;
 
@@ -93,8 +96,8 @@ public class CarController : MonoBehaviour
 
     public void StopCar()
     {
-        //slow the velocity by 50%
-        carRigidbody.velocity *= 0.5f;
+        //slow the velocity by 10%
+        carRigidbody.velocity *= 0.9f;
         maxSteeringAngle = 0;
         foreach (AxleInfo axleInfo in axleInfos)
         {
@@ -113,6 +116,22 @@ public class CarController : MonoBehaviour
 
     public void ExplodeCar()
     {
+        PlayStateUIManager.Instance.OpenLosePanel();
+        carRigidbody.velocity = Vector3.zero;
+        foreach (AxleInfo axleInfo in axleInfos)
+        {
+            if (axleInfo.motor)
+            {
+                axleInfo.leftWheel.motorTorque = 0;
+                axleInfo.rightWheel.motorTorque = 0;
 
+                axleInfo.leftWheel.brakeTorque = maxMotorTorque * 50f;
+                axleInfo.rightWheel.brakeTorque = maxMotorTorque * 50f;
+            }
+        }
+        smokeParticle.Play();
+        explosionSound.Play();
+        explosionParticle.Play();
+        enabled = false;
     }
 }

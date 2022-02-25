@@ -5,8 +5,17 @@ public class SplineGenerator : MonoBehaviour
 {
     [SerializeField] private SplineComputer splineComputer;
     [SerializeField] private int splinePointsLength;
+
+    [SerializeField] private GameObject finishLinePrefab;
     [SerializeField] private GameObject[] props;
+    [SerializeField] private GameObject coinPrefab;
+    [SerializeField] private GameObject doubleCoinPrefab;
     private SplinePoint[] splinePoints;
+
+    void Awake()
+    {
+        Generate();
+    }
 
     public void Generate()
     {
@@ -34,7 +43,18 @@ public class SplineGenerator : MonoBehaviour
             Vector3 offset = new Vector3(0, 1, Random.Range(3, 6) * isPlus);    // setting the offset
             GameObject propInstance = Instantiate(props[Random.Range(0, props.Length)], splines[i].position + offset, Quaternion.Euler(0, Random.Range(0f, 360f), 0));
             propInstance.transform.parent = propsParent.transform;
-            if (Random.Range(0, 2) == 1) { i++; }
+            if (Random.Range(0, 2) == 1)
+            {
+                i++;
+                Instantiate(coinPrefab, splines[i].position + new Vector3(0, 1, 0), Quaternion.identity);
+            }
+            else if (Random.Range(0, 3) == 1)
+            {
+                i++;
+                Instantiate(doubleCoinPrefab, splines[i].position + new Vector3(0, 1, 0), Quaternion.identity);
+            }
         }
+        // Instatiating finishLine prefab at the end of the spline
+        Instantiate(finishLinePrefab, splines[splines.Length - 1].position, Quaternion.Euler(90, 0, 0));
     }
 }

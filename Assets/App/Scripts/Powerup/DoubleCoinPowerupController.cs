@@ -20,8 +20,8 @@ public class DoubleCoinPowerupController : MonoBehaviour
         if (object1.transform.position != object1StartPos || object2.transform.position != object2StartPos)
             return;
 
-        GameManager.instance.ActivatePowerup();
-        PlayStateUIManager.instance.StartCoroutine("ShowPowerup");
+        GameManager.Instance.ActivatePowerup();
+        PlayStateUIManager.Instance.ShowPowerup();
         Destroy(gameObject);
     }
 }

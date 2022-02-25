@@ -8,6 +8,8 @@ TagManager:
   - Coin
   - Explosive
   - Obstacle
+  - FxTemporaire
+  - Ground
   layers:
   - Default
   - TransparentFX
