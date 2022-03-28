@@ -49,6 +49,11 @@ public class MainMenuUIManager : MonoBehaviour
         quitPanel.SetActive(true);
     }
 
+    public void HideLevelPanel()
+    {
+        levelsPanel.SetActive(false);
+    }
+
     public void HideQuit()
     {
         quitPanel.SetActive(false);
